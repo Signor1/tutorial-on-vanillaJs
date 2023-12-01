@@ -1,46 +1,85 @@
-document.getElementsByTagName("h1")[0].innerHTML = "Welome";
+// Comments, Functions, Events
 
-// let animals = ["cat", "dog", "horse"];
-const sum = (a, b) => a + b;
+const user = {
+  name: "Phils",
+  email: "phils@gmail.com",
+  password: "jg975424hggd",
+};
 
-const minus = (a, b) => a - b;
+//ksdbjshdjs
+/* smdshdsjhdjshds */
+/* let x, y, z;
+x = 3; y = 6; z = 0
+*/
 
-function multiply(a, b) {
-  return a * b;
+const template = `<div>
+          <h1>${user.name}</h1>
+          <h3>${user.email}</h3>
+          <p>${user.password}</p>
+    </div>`;
+
+document.getElementsByClassName("textContainer")[0].innerHTML = template;
+
+const button = document.getElementById("btn");
+
+button.addEventListener("click", () => Greet(user));
+
+function Greet(param) {
+  window.alert("Hello! Good morning" + " " + param.name);
 }
 
-let a = 10;
-const b = 20;
+// Amount formatter
+const formatAmount = (amount) => {
+  let formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "NGN",
+  });
+  return formatter.format(amount);
+};
 
-var salary = 100000;
-var utilityBills = 20000;
-var tax = (salary * 2) / 100;
+const products = [
+  {
+    name: "Samsung TV",
+    price: 400000,
+  },
+  {
+    name: "Royal TV",
+    price: 200000,
+  },
+  {
+    name: "Panasonic TV",
+    price: 600000,
+  },
+  {
+    name: "LG TV",
+    price: 550000,
+  },
+  {
+    name: "Hisense TV",
+    price: 380000,
+  },
+];
 
-var moneyR = salary - (tax + utilityBills);
+const productD = document.getElementsByClassName("products")[0];
 
-console.log(moneyR);
+let wrapper;
 
-a = 20;
+for (let i = 0; i < products.length; i++) {
+  wrapper += `<li style="list-style:none">
+        <h2 style="color: crimson; ">${products[i].name}</h2>
+        <p>${formatAmount(products[i].price)}</p>
+  </li>`;
+}
+if (wrapper) {
+  productD.innerHTML = wrapper;
+}
 
-// automatic
-x = 20;
-y = 50;
-z = x + y;
-console.log(z);
+document.write(formatAmount(7628665452));
 
-let =
-  // length, index;
-  document.getElementsByTagName("h2")[0].innerHTML = multiply(212, 56);
-// 'cat'
-
-// '10'
-
-// 10
-
-// null
-
-// undefined
-
-// true || false
-
-// { name: "Emma", email: "emma@gmail.com", age: 12, isOnline: false }
+function countLetters(params) {
+  let list = params.split("");
+  console.log(list);
+  let num = list.length;
+  return num;
+}
+document.getElementById("display").innerHTML = countLetters("Philip");

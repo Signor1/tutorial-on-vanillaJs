@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body class="theme dark">
+
+    <h1>Welcome to your JS Class</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque veritatis blanditiis ducimus dignissimos
+        libero consequuntur dicta ratione quibusdam laborum beatae impedit, quia rem nesciunt asperiores enim cum eos
+        deserunt ea.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptates fugiat eos labore quos nesciunt ad
+        aliquid officia ducimus veniam minima quisquam fugit in sapiente, vitae voluptas, ut harum et.</p>
+
+    <button onclick="find()" class="btn" ondblclick="alert('Just saying Hi 😄')">Say Hi</button>
+
+    <!-- onchange and onsubmit events -->
+    <form action="" id="form">
+        <label for="product">Product</label>
+        <select id="product">
+            <option value="">Choose</option>
+            <option value="2000">Wrist Bangle</option>
+            <option value="3500">Hat</option>
+            <option value="5000">Wrist Watch</option>
+        </select>
+
+        <label for="price">Price</label>
+        <input type="text" id="price" readonly>
+
+        <button type="submit">Checkout</button>
+    </form>
+
+    <style>
+        form {
+            width: 400px;
+            margin: 3rem auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            background-color: white;
+        }
+
+        form label {
+            color: blue;
+        }
+
+        form input,
+        form select {
+            width: 100%;
+            height: 35px;
+            outline: none;
+        }
+
+        form button {
+            margin-top: 2rem;
+            background-color: blue;
+            color: white;
+            padding-block: 10px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+    <script src="js/event.js"></script>
+</body>
+
+</html>
