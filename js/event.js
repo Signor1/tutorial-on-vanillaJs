@@ -23,7 +23,8 @@ find();
 // onsubmit and onchange
 const form = document.getElementById("form"),
   selectTag = document.getElementById("product"),
-  priceInput = document.getElementById("price");
+  priceInput = document.getElementById("price"),
+  result = document.getElementsByClassName("result")[0];
 
 selectTag.addEventListener("change", setPrice);
 
@@ -33,13 +34,27 @@ function setPrice() {
   priceInput.value = selectTag.value;
 }
 
-function getData(e) {
-  e.preventDefault();
+// Amount formatter
+const formatAmount = (amount) => {
+  let formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "NGN",
+  });
+  return formatter.format(amount);
+};
+
+function getData(event) {
+  event.preventDefault();
 
   if (selectTag.value != "") {
     let item = selectTag.options[selectTag.selectedIndex].text;
     let price = priceInput.value;
-    alert(`You chose ${item} and the cost is ${price}`);
+    result.innerHTML = `You chose ${item} and the cost is ${formatAmount(
+      price
+    )}`;
+
+    // alert(`You chose ${item} and the cost is ${formatAmount(price)}`);
+    console.log(typeof formatAmount(price));
     form.reset();
   } else {
     alert("Choose a product first");
