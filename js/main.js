@@ -41,6 +41,7 @@ const products = [
   {
     name: "Samsung TV",
     price: 400000,
+    discount: "5%",
   },
   {
     name: "Royal TV",
@@ -57,6 +58,7 @@ const products = [
   {
     name: "Hisense TV",
     price: 380000,
+    discount: "10%",
   },
 ];
 
@@ -68,6 +70,7 @@ for (let i = 0; i < products.length; i++) {
   wrapper += `<li style="list-style:none">
         <h2 style="color: crimson; ">${products[i].name}</h2>
         <p>${formatAmount(products[i].price)}</p>
+        <p>${products[i].discount ? products[i].discount : null}</p>
   </li>`;
 }
 if (wrapper) {
